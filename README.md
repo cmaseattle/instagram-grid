@@ -24,7 +24,7 @@ instagrid({
 
 **container**: `container` defines the element ID you wish to add your feed to. **Must** be an ID
 
-**key**: `key` defines your client ID obtained from the instagram API. No authentication needed, just a quick API key. Follow [these steps](https://github.com/svmatthews/instagram-access-token-generation).
+**client_id**: `client_id` defines your client ID obtained from the instagram API. No authentication needed, just a quick API key. Follow [these steps](https://github.com/svmatthews/instagram-access-token-generation).
 
 ## Option Parameters
 
@@ -40,7 +40,7 @@ Initiate the instagram blocks to span 6 images across and 3 images down within t
 $(document).ready(function(){
 	instagrid({
 		container: 'social',
-		key: 'your-client-id',
+		client_id: 'your-client-id',
 		width: 6,
 		height: 3
 	});
