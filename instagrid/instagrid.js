@@ -17,6 +17,7 @@ function makeBlocks(c,key,w,h) {
 		url: 'https://api.instagram.com/v1/users/257720515/media/recent/?client_id='+key+'&count='+tot,
 		success: function(d) {
 			for(i=0;i<tot;i++) {
+				console.log(d);
 				var block = document.createElement('div');
 				block.className='insta-block';
 				block.style.width=100/w+'%';
