@@ -22,15 +22,21 @@ instagrid({
 
 ## Required Parameters
 
-**container**: `container` defines the element ID you wish to add your feed to. **Must** be an ID
+**container**   
+`container` defines the element ID you wish to add your feed to. **Must** be an ID
 
-**client_id**: `client_id` defines your client ID obtained from the instagram API. No authentication needed, just a quick API key. Follow [these steps](https://github.com/svmatthews/instagram-access-token-generation).
+**client_id**   
+`client_id` defines your client ID obtained from the instagram API. No authentication needed, just a quick API key. Follow [these steps](https://github.com/svmatthews/instagram-access-token-generation).
 
 ## Option Parameters
 
-**width**: `width` in number of images you wish to span the horizontal space of your defined `container`. Default is 5.
+**width**   
+`width` in number of images you wish to span the horizontal space of your defined `container`.   
+Default is 5.
 
-**height**: `height` in number of images you wish to span the vertical space of your defined `container`. Default is 2. 
+**height**   
+`height` in number of images you wish to span the vertical space of your defined `container`.   
+Default is 2. 
 
 ## Example
 
