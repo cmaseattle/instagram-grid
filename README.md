@@ -1,5 +1,5 @@
-Instagram Responsive Blocks
-===========================
+Instagram Responsive Grid
+=========================
 
 This library is intended for some quick-usage instagram feed work. The library allows you specify how many images wide and tall you want your feed to be within your specified container. **Requires jQuery** for `ajax` call.
 
@@ -15,7 +15,7 @@ This library is intended for some quick-usage instagram feed work. The library a
 2. Initiate the instagram feed via JavaScript
 
 ```JS
-instablocks({
+instagrid({
 	// options
 });
 ```
@@ -38,7 +38,7 @@ Initiate the instagram blocks to span 6 images across and 3 images down within t
 
 ```JS
 $(document).ready(function(){
-	instaBlocks({
+	instagrid({
 		container: 'social',
 		key: 'your-client-id',
 		width: 6,
@@ -55,4 +55,4 @@ $(document).ready(function(){
 	* linkable within current page (build lightbox) or linkable to instagram website
 * stack images vertically at specific media queries (optional)
 * build testing/development environment
-* add example `gh-pages` branch with interaction
+* add example `gh-pages` branch with user input fields

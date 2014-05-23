@@ -1,4 +1,4 @@
-function insta(e) {
+function instagrid(e) {
 	var c = e.container !== undefined ? e.container : error('container');
 	var key = e.client_id !== undefined ? e.client_id : error('client_id');
 	var w = e.width !== undefined ? e.width : 5;
