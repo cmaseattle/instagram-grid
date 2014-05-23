@@ -5,14 +5,14 @@ This library is intended for some quick-usage instagram feed work. The library a
 
 ## Setup
 
-1. Include the `instares.js` and `instares.css` in your project's `<head>`
+Include the `instagrid.js` and `instagrid.css` in your project's `<head>`
 
 ```HTML
-<link href="css/instares.css" rel="stylesheet">
-<script type="text/javascript" src="js/instares.js"></script>
+<link href="css/instagrid.css" rel="stylesheet">
+<script type="text/javascript" src="js/instagrid.js"></script>
 ```
 
-2. Initiate the instagram feed via JavaScript
+Initiate the instagram feed via JavaScript
 
 ```JS
 instagrid({
@@ -50,6 +50,7 @@ $(document).ready(function(){
 ## Roadmap
 
 * remove jQuery reliance
+* build error handler
 * more optional parameters
 	* linkable options
 	* linkable within current page (build lightbox) or linkable to instagram website
