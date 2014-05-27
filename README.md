@@ -40,7 +40,7 @@ Default is 5.
 `height` in number of images you wish to span the vertical space of your defined `container`.   
 Default is 2.
 
-**link**
+**link**   
 `link` will add clickability to your images, allowing you to click and see a larger version of the image within your site - without linking to Instagram.   
 Default is `false`
 
@@ -65,12 +65,12 @@ $(document).ready(function(){
 * remove jQuery reliance for ajax call
 * build error handler
 * more optional parameters
-	* -linkable options-
-	* -linkable within current page (build lightbox)- or linkable to instagram website
+	* ~~linkable options~~
+	* ~~linkable within current page (build lightbox)~~ or linkable to instagram website
 * stack images vertically at specific media queries (optional)
-* -build testing/development environment-
+* ~~build testing/development environment~~
 * add example `gh-pages` branch with user input fields
-# -start recording history-
+# ~~start recording history~~
 * *build this as a real javascript library, rather than a file of accessible functions*
 
 ## History
@@ -79,6 +79,7 @@ $(document).ready(function(){
 
 * added `link` parameter with lightbox - default is `false`
 * passing object from initial parameters reduces function-specific parameters and increases readability
+* added MIT License
 
 **0.0.1** - Original Release 5/23/2014
 
