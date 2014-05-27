@@ -1,0 +1,8 @@
+/*
+instagram-grid - 0.0.1
+Sam Matthews & Creative Media Alliance
+https://github.com/cmaseattle/instagram-grid
+Free to use under terms of MIT license
+*/
+
+.insta-block{float:left;-webkit-background-size:cover;-moz-background-size:cover;-o-background-size:cover;background-size:cover;background-position:center center}

@@ -1,4 +1,4 @@
-function instagrid(e) {
+function instagramGrid(e) {
 	var c = e.container !== undefined ? e.container : error('container');
 	var key = e.client_id !== undefined ? e.client_id : error('client_id');
 	var w = e.width !== undefined ? e.width : 5;
@@ -9,7 +9,7 @@ function instagrid(e) {
 
 function makeBlocks(c,key,w,h) {
 	tot = w*h;
-	var container = document.getElementById(c)
+	var container = document.getElementById(c);
 	$.ajax({
 		type: "GET",
 		dataType: "jsonp",
