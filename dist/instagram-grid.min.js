@@ -1,5 +1,5 @@
 /*
-instagram-grid - 0.0.1
+instagram-grid - 0.0.2
 Sam Matthews & Creative Media Alliance
 https://github.com/cmaseattle/instagram-grid
 Free to use under terms of MIT license
