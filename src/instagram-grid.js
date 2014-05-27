@@ -9,7 +9,7 @@ function instagrid(e) {
 
 function makeBlocks(c,key,w,h) {
 	tot = w*h;
-	var container = document.getElementById(c)
+	var container = document.getElementById(c);
 	$.ajax({
 		type: "GET",
 		dataType: "jsonp",

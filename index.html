@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="viewport" content="width=device-width" charset="UTF-8">
+<title>Instagram-grid</title>
+<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+<script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+<link href="dist/instagram-grid.min.css" rel="stylesheet">
+<style>
+	#container {
+		position:absolute;
+		top:10%;
+		left:10%;
+		width:80%;
+		height:80%;
+	}
+</style>
+</head>
+<body>
+	@cmaseattle
+	<div id="container"></div>
+
+<script type="text/javascript" src="dist/instagram-grid.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+	instagrid({
+		container: 'container',
+		client_id: '483b33a7281f47a2a4e632d1156d3c9f',
+		width: 6,
+		height: 3
+	});
+});
+</script>
+</body>
+<html>

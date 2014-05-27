@@ -5,17 +5,17 @@ This library is intended for some quick-usage instagram feed work. The library a
 
 ## Setup
 
-Include the `instagrid.js` and `instagrid.css` in your project's `<head>`
+Include the `instagram-grid.min.js` and `instagram-grid.min.css` in your project's `<head>`
 
 ```HTML
-<link href="css/instagrid.css" rel="stylesheet">
-<script type="text/javascript" src="js/instagrid.js"></script>
+<link href="css/instagram-grid.min.css" rel="stylesheet">
+<script type="text/javascript" src="js/instagram-grid.min.js"></script>
 ```
 
 Initiate the instagram feed via JavaScript
 
 ```JS
-instagrid({
+instagramGrid({
 	// options
 });
 ```
@@ -44,7 +44,7 @@ Initiate the instagram blocks to span 6 images across and 3 images down within t
 
 ```JS
 $(document).ready(function(){
-	instagrid({
+	instagramGrid({
 		container: 'social',
 		client_id: 'your-client-id',
 		width: 6,
@@ -61,5 +61,5 @@ $(document).ready(function(){
 	* linkable options
 	* linkable within current page (build lightbox) or linkable to instagram website
 * stack images vertically at specific media queries (optional)
-* build testing/development environment
+* --build testing/development environment--
 * add example `gh-pages` branch with user input fields
