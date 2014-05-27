@@ -61,5 +61,5 @@ $(document).ready(function(){
 	* linkable options
 	* linkable within current page (build lightbox) or linkable to instagram website
 * stack images vertically at specific media queries (optional)
-* --build testing/development environment--
+* -build testing/development environment-
 * add example `gh-pages` branch with user input fields
