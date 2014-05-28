@@ -1,7 +1,7 @@
 Instagram Responsive Grid
 =========================
 
-version **0.0.2**
+version **0.0.3**
 
 This library is intended for some quick-usage instagram feed work. Instagram-Grid allows you specify how many images wide and tall you want your feed to be within your specified container. **Requires jQuery** for `ajax` call. *NOTE*: maximum number of images in a single call is *33 images*.
 
@@ -34,19 +34,27 @@ instagramGrid({
 
 **width**   
 `width` in number of images you wish to span the horizontal space of your defined `container`.   
-Default is 5.
+Default: `5`
 
 **height**   
 `height` in number of images you wish to span the vertical space of your defined `container`.   
-Default is 2.
+Default: `2`
 
 **link**   
 `link` will add clickability to your images, allowing you to click and see a larger version of the image within your site - without linking to Instagram.   
-Default is `false`
+Default: `false`
+
+**likes**   
+`likes` will add a small box in the corner of each image showing the number of likes **IF** the count is *at least one* like.   
+Default: `false`
+
+**likesHover**   
+`likesHover` is used in hand with `likes` (above) to only show the like count when the user hovers over the image.   
+Default: `false`
 
 ## Example
 
-Initiate the instagram blocks to span 6 images across and 3 images down within the `#social` element. Clicking the element will show a larger, lightbox version of your image.
+Initiate the instagram blocks to span 6 images across and 3 images down within the `#social` element. Clicking the element will show a larger, lightbox version of your image and each image will have the number of likes shown in the lower left corner.
 
 ```JS
 $(document).ready(function(){
@@ -55,7 +63,8 @@ $(document).ready(function(){
 		client_id: 'your-client-id',
 		width: 6,
 		height: 3,
-		link: true
+		link: true,
+		likes: true
 	});
 });
 ```
@@ -75,6 +84,13 @@ $(document).ready(function(){
 * *build this as a real javascript library, rather than a file of accessible functions*
 
 ## History
+
+**0.0.3**
+
+* *refactor* code to use `<img src>` tags instead of `<div>` with background images, which fixes Firefox and IE issues.
+* *update* built-in lightbox UI to use `<img>` tags and has a new 'close' button
+* *new* optional parameter `likes` allows user to include like count for images with at least *one* like.
+* *new* optional parameter `likesHover` shows number of likes only when the user hovers over the image
 
 **0.0.2**
 

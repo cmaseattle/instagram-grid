@@ -7,7 +7,9 @@ function instagramGrid(e) {
 				'width': w,
 				'height': h,
 				'total': w*h,
-				'link': e.link !== undefined ? e.link : false
+				'link': e.link !== undefined ? e.link : false,
+				'likes': e.likes !== undefined ? e.likes : false,
+				'likesHover': e.likesHover !== undefined ? e.likesHover : false
 			};
 	getImages(options);
 }
@@ -29,33 +31,51 @@ function getImages(o) {
 
 function makeBlocks(d,o) {
 	console.log(d);
+	var container = document.getElementById(o.container);
 	for(i=0;i<o.total;i++) {
+
 		var block = document.createElement('div');
-		var container = document.getElementById(o.container);
-		block.id='image-'+i;
 		block.className='insta-block';
+		block.style.width=100/o.width+'%';
+
+		var image = document.createElement('img');
+		image.src=d.data[i].images.low_resolution.url;
+		image.id='image-'+i;
+		image.className='insta-img';
+
 		if(o.link) {
-			block.className+=' clickable';
-			block.addEventListener('click', function(){
+			image.className+=' clickable';
+			image.addEventListener('click', function(){
 				var imageContain = document.createElement('div');
 				imageContain.className = 'instagram-cover';
 				imageContain.addEventListener('click', function(){
 					this.parentNode.removeChild(this);
 				});
 				var id = parseInt(this.id.slice(6), 10);
-				var image = document.createElement('div');
-				image.className='insta-block-large';
-				image.style['background-image']='url('+d.data[id].images.standard_resolution.url+')';
-				image.innerHTML='<div class="insta-block-large-close">&times;</div>';
+				var imageLarge = document.createElement('img');
+				imageLarge.className='insta-block-large';
+				imageLarge.src=d.data[id].images.standard_resolution.url;
+				imageContain.innerHTML='<div class="insta-block-large-close">&times;</div>';
 				
 				// append new elements to each other and to body
-				imageContain.appendChild(image);
+				imageContain.appendChild(imageLarge);
 				document.body.appendChild(imageContain);
 			});
 		}
-		block.style.width=100/o.width+'%';
-		block.style['padding-bottom']=100/o.width+'%';
-		block.style['background-image']='url('+d.data[i].images.low_resolution.url+')';
+		if(o.likes) {
+			if (d.data[i].likes.count!==0) {
+				console.log('like it!');
+				like = document.createElement('div');
+				like.className='insta-likes';
+				if(o.likesHover) {
+					like.className+=' hide';
+				}
+				like.innerHTML='<img src="dist/img/insta-heart.svg" class="insta-heart">'+d.data[i].likes.count;
+				block.appendChild(like);
+			}
+		}
+
+		block.appendChild(image);
 		container.appendChild(block);
 	}
 }
