@@ -67,6 +67,7 @@ $(document).ready(function(){
 * more optional parameters
 	* ~~linkable options~~
 	* ~~linkable within current page (build lightbox)~~ or linkable to instagram website
+	* show like counts - boolean parameter - don't show if there aren't any likes for single photos *planned for 0.0.3*
 * stack images vertically at specific media queries (optional)
 * ~~build testing/development environment~~
 * add example `gh-pages` branch with user input fields
