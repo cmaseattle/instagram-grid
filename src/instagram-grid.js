@@ -62,7 +62,7 @@ function makeBlocks(d,o) {
 			});
 		}
 		if(o.likes) {
-			if (d.data[i].likes.count!=0) {
+			if (d.data[i].likes.count!==0) {
 				console.log('like it!');
 				like = document.createElement('div');
 				like.className='insta-likes';
