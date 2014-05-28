@@ -75,6 +75,11 @@ $(document).ready(function(){
 
 ## History
 
+**0.0.3**
+
+* *refactor* code to use `<img src>` tags instead of `<div>` with background images, which fixes Firefox and IE issues.
+* *update* built-in lightbox UI to use `<img>` tags and has a new 'close' button
+
 **0.0.2**
 
 * added `link` parameter with lightbox - default is `false`
