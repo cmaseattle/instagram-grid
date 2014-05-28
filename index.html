@@ -2,10 +2,10 @@
 <html lang="en">
 <head>
 <meta name="viewport" content="width=device-width" charset="UTF-8">
-<title>Instagrid</title>
+<title>Instagram-grid</title>
 <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
 <script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-<link href="instagrid/instagrid.css" rel="stylesheet">
+<link href="src/instagram-grid.css" rel="stylesheet">
 <style>
 	#container {
 		position:absolute;
@@ -17,17 +17,20 @@
 </style>
 </head>
 <body>
-	#cmaseattle
+
 	<div id="container"></div>
 
-<script type="text/javascript" src="instagrid/instagrid.js"></script>
+<script type="text/javascript" src="src/instagram-grid.js"></script>
 <script type="text/javascript">
 $(document).ready(function(){
-	instagrid({
+	instagramGrid({
 		container: 'container',
-		client_id: '483b33a7281f47a2a4e632d1156d3c9f',
-		width: 6,
-		height: 3
+		client_id: 'your_client_id',
+		width: 5,
+		height: 3,
+		link: true,
+		likes: true,
+		likesHover: true
 	});
 });
 </script>
