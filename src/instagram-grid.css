@@ -53,6 +53,19 @@ body {
 	border-radius:3px;
 	z-index: 1;
 }
+.insta-likes.hide {
+	opacity:0;
+	-webkit-transition: 0.2s;
+	-moz-transition: 0.2s;
+	-ms-transition: 0.2s;
+	-o-transition: 0.2s;
+	transition: 0.2s;
+	-webkit-backface-visibility: hidden;
+}
+.insta-block:hover .insta-likes.hide {
+	opacity:1;
+}
+
 .insta-heart {
 	width:10px;
 	height:auto;

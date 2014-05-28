@@ -34,19 +34,23 @@ instagramGrid({
 
 **width**   
 `width` in number of images you wish to span the horizontal space of your defined `container`.   
-Default is 5.
+Default: `5`
 
 **height**   
 `height` in number of images you wish to span the vertical space of your defined `container`.   
-Default is 2.
+Default: `2`
 
 **link**   
 `link` will add clickability to your images, allowing you to click and see a larger version of the image within your site - without linking to Instagram.   
-Default is `false`
+Default: `false`
 
 **likes**   
 `likes` will add a small box in the corner of each image showing the number of likes **IF** the count is *at least one* like.   
-Default is `false`
+Default: `false`
+
+**likesHover**   
+`likesHover` is used in hand with `likes` (above) to only show the like count when the user hovers over the image.   
+Default: `false`
 
 ## Example
 
@@ -85,6 +89,7 @@ $(document).ready(function(){
 * *refactor* code to use `<img src>` tags instead of `<div>` with background images, which fixes Firefox and IE issues.
 * *update* built-in lightbox UI to use `<img>` tags and has a new 'close' button
 * *new* optional parameter `likes` allows user to include like count for images with at least *one* like.
+* *new* optional parameter `likesHover` shows number of likes only when the user hovers over the image
 
 **0.0.2**
 

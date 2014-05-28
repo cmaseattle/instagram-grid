@@ -8,7 +8,8 @@ function instagramGrid(e) {
 				'height': h,
 				'total': w*h,
 				'link': e.link !== undefined ? e.link : false,
-				'likes': e.likes !== undefined ? e.likes : false
+				'likes': e.likes !== undefined ? e.likes : false,
+				'likesHover': e.likesHover !== undefined ? e.likesHover : false
 			};
 	getImages(options);
 }
@@ -66,6 +67,9 @@ function makeBlocks(d,o) {
 				console.log('like it!');
 				like = document.createElement('div');
 				like.className='insta-likes';
+				if(o.likesHover) {
+					like.className+=' hide';
+				}
 				like.innerHTML='<img src="dist/img/insta-heart.svg" class="insta-heart">'+d.data[i].likes.count;
 				block.appendChild(like);
 			}
