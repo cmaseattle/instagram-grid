@@ -44,9 +44,13 @@ Default is 2.
 `link` will add clickability to your images, allowing you to click and see a larger version of the image within your site - without linking to Instagram.   
 Default is `false`
 
+**likes**   
+`likes` will add a small box in the corner of each image showing the number of likes **IF** the count is *at least one* like.   
+Default is `false`
+
 ## Example
 
-Initiate the instagram blocks to span 6 images across and 3 images down within the `#social` element. Clicking the element will show a larger, lightbox version of your image.
+Initiate the instagram blocks to span 6 images across and 3 images down within the `#social` element. Clicking the element will show a larger, lightbox version of your image and each image will have the number of likes shown in the lower left corner.
 
 ```JS
 $(document).ready(function(){
@@ -55,7 +59,8 @@ $(document).ready(function(){
 		client_id: 'your-client-id',
 		width: 6,
 		height: 3,
-		link: true
+		link: true,
+		likes: true
 	});
 });
 ```
@@ -79,6 +84,7 @@ $(document).ready(function(){
 
 * *refactor* code to use `<img src>` tags instead of `<div>` with background images, which fixes Firefox and IE issues.
 * *update* built-in lightbox UI to use `<img>` tags and has a new 'close' button
+* *new* optional parameter `likes` allows user to include like count for images with at least *one* like.
 
 **0.0.2**
 

@@ -12,7 +12,18 @@ body {
 }
 .insta-block {
 	float:left;
+	position:relative;
+}
+.insta-img {
+	width:100%;
 	height:auto;
+	float:left;
+	-webkit-transition: 0.2s;
+	-moz-transition: 0.2s;
+	-ms-transition: 0.2s;
+	-o-transition: 0.2s;
+	transition: 0.2s;
+	-webkit-backface-visibility: hidden;
 }
 .insta-block-large {
 	position:absolute;
@@ -24,11 +35,28 @@ body {
 	margin-left:-300px;
 	border:5px solid #fff;
 }
-.insta-block.clickable {
+.insta-img.clickable {
 	cursor:pointer;
 }
-.insta-block.clickable:hover {
+.insta-img.clickable:hover {
 	opacity:.9;
+}
+.insta-likes {
+	font-family:arial, sans-serif;
+	position:absolute;
+	left:5px;
+	bottom:5px;
+	color:#fff;
+	font-size:.8em;
+	padding:3px 5px;
+	background-color:rgba(0,0,0,.5);
+	border-radius:3px;
+	z-index: 10;
+}
+.insta-heart {
+	width:10px;
+	height:auto;
+	margin-right:5px;
 }
 .instagram-cover {
 	position:absolute;
