@@ -30,7 +30,7 @@ function getImages(o) {
 function makeBlocks(d,o) {
 	console.log(d);
 	for(i=0;i<o.total;i++) {
-		var block = document.createElement('div');
+		var block = document.createElement('img');
 		var container = document.getElementById(o.container);
 		block.id='image-'+i;
 		block.className='insta-block';
@@ -43,10 +43,10 @@ function makeBlocks(d,o) {
 					this.parentNode.removeChild(this);
 				});
 				var id = parseInt(this.id.slice(6), 10);
-				var image = document.createElement('div');
+				var image = document.createElement('img');
 				image.className='insta-block-large';
-				image.style['background-image']='url('+d.data[id].images.standard_resolution.url+')';
-				image.innerHTML='<div class="insta-block-large-close">&times;</div>';
+				image.src=d.data[id].images.standard_resolution.url;
+				imageContain.innerHTML='<div class="insta-block-large-close">&times;</div>';
 				
 				// append new elements to each other and to body
 				imageContain.appendChild(image);
@@ -54,8 +54,7 @@ function makeBlocks(d,o) {
 			});
 		}
 		block.style.width=100/o.width+'%';
-		block.style['padding-bottom']=100/o.width+'%';
-		block.style['background-image']='url('+d.data[i].images.low_resolution.url+')';
+		block.src=d.data[i].images.low_resolution.url;
 		container.appendChild(block);
 	}
 }
