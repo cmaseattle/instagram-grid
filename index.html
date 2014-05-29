@@ -9,10 +9,10 @@
 <style>
 	#container {
 		position:absolute;
-		top:10%;
-		left:10%;
-		width:80%;
-		height:80%;
+		top:0;
+		left:0;
+		width:50%;
+		height:50%;
 	}
 </style>
 </head>
@@ -22,14 +22,14 @@
 <script type="text/javascript" src="src/instagram-grid.js"></script>
 <script type="text/javascript">
 $(document).ready(function(){
-	instagramGrid({
+	igrid.init({
 		container: 'container',
 		client_id: '483b33a7281f47a2a4e632d1156d3c9f',
-		width: 5,
+		width: 3,
 		height: 3,
 		link: true,
 		likes: true,
-		likesHover: false
+		likesHover: true
 	});
 });
 </script>

@@ -17,7 +17,7 @@ Include the `instagram-grid.min.js` and `instagram-grid.min.css` in your project
 Initiate the instagram feed via JavaScript
 
 ```JS
-instagramGrid({
+igrid.init({
 	// options
 });
 ```
@@ -58,13 +58,14 @@ Initiate the instagram blocks to span 6 images across and 3 images down within t
 
 ```JS
 $(document).ready(function(){
-	instagramGrid({
+	igrid.init({
 		container: 'social',
 		client_id: 'your-client-id',
 		width: 6,
 		height: 3,
 		link: true,
-		likes: true
+		likes: true,
+		likesHover: true
 	});
 });
 ```
@@ -81,11 +82,16 @@ $(document).ready(function(){
 * ~~build testing/development environment~~
 * add example `gh-pages` branch with user input fields
 # ~~start recording history~~
-* *build this as a real javascript library, rather than a file of accessible functions*
+* ~~*build this as a real javascript library, rather than a file of accessible functions*~~
 
 ## History
 
-**0.0.3**
+**0.0.4** - 5/29/2014
+
+* *refactor* library into module-based functions to prevent exposing unecessary functions to client (thanks to [@jczaplew](https://github.com/jczaplew)) - creates `igrid.init()`
+* *rename* function to `igrid` to instead of camelCased `instagramGrid`
+
+**0.0.3** - 5/27/2014
 
 * *refactor* code to use `<img src>` tags instead of `<div>` with background images, which fixes Firefox and IE issues.
 * *update* built-in lightbox UI to use `<img>` tags and has a new 'close' button
