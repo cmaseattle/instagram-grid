@@ -2,6 +2,20 @@ body {
 	padding:0;
 	margin:0;
 }
+/* clearfix */
+.cf:before,
+.cf:after {
+    content:" ";
+    display:table;
+}
+.cf:after {
+    clear:both;
+}
+.cf {
+    *zoom:1;
+}
+
+/* instagram grid styles */
 .insta-block,
 .insta-block-large {
 	-webkit-background-size: cover; 
@@ -65,7 +79,6 @@ body {
 .insta-block:hover .insta-likes.hide {
 	opacity:1;
 }
-
 .insta-heart {
 	width:10px;
 	height:auto;

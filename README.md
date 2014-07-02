@@ -1,7 +1,7 @@
 Instagram Responsive Grid
 =========================
 
-version **0.0.3**
+version **0.0.4**
 
 This library is intended for some quick-usage instagram feed work. Instagram-Grid allows you specify how many images wide and tall you want your feed to be within your specified container. **Requires jQuery** for `ajax` call. *NOTE*: maximum number of images in a single call is *33 images*.
 
@@ -17,7 +17,7 @@ Include the `instagram-grid.min.js` and `instagram-grid.min.css` in your project
 Initiate the instagram feed via JavaScript
 
 ```JS
-instagramGrid({
+igrid.init({
 	// options
 });
 ```
@@ -29,6 +29,9 @@ instagramGrid({
 
 **client_id**   
 `client_id` defines your client ID obtained from the instagram API. No authentication needed, just a quick API key. Follow [these steps](https://github.com/svmatthews/instagram-access-token-generation).
+
+**userID**
+`userID` defines the specific account from which you are getting the images from. This can be any public instagram account. To obtain the userID from an account, you can [enter the username on this website](http://jelled.com/instagram/lookup-user-id#) and get the key back. *Should be a string value, but an integer will work as well*.
 
 ## Optional Parameters
 
@@ -52,19 +55,35 @@ Default: `false`
 `likesHover` is used in hand with `likes` (above) to only show the like count when the user hovers over the image.   
 Default: `false`
 
+**clearfix**   
+`clearfix` option adds a standard [clearfix](http://nicolasgallagher.com/micro-clearfix-hack/) element to the end of your instagram blocks so your wrapping container element is expanded to the extent of your instagram images.   
+Default: `false`
+
+*Clearfix example*   
+Before - see the border of the wrapping element does not expand to extent of instagram photos because the insta blocks are outside of the document flow.
+
+![Instagram elements without a clearfix](img/clearfix-before.png)
+
+After - Clearfixes will fake out the filled extent and push your wrapping element down to the extent of your instagram elemnts.
+
+![Instagram elements with a clearfix enabled](img/clearfix-after.png)
+
 ## Example
 
 Initiate the instagram blocks to span 6 images across and 3 images down within the `#social` element. Clicking the element will show a larger, lightbox version of your image and each image will have the number of likes shown in the lower left corner.
 
 ```JS
 $(document).ready(function(){
-	instagramGrid({
-		container: 'social',
+	igrid.init({
+		container: 'container',
 		client_id: 'your-client-id',
-		width: 6,
-		height: 3,
+		userID: '257720515', // CMA's instagram userID
+		width: 3,
+		height: 1,
 		link: true,
-		likes: true
+		likes: true,
+		likesHover: true,
+		clearfix: true
 	});
 });
 ```
@@ -81,11 +100,16 @@ $(document).ready(function(){
 * ~~build testing/development environment~~
 * add example `gh-pages` branch with user input fields
 # ~~start recording history~~
-* *build this as a real javascript library, rather than a file of accessible functions*
+* ~~*build this as a real javascript library, rather than a file of accessible functions*~~
 
 ## History
 
-**0.0.3**
+**0.0.4** - 5/29/2014
+
+* *refactor* library into module-based functions to prevent exposing unecessary functions to client (thanks to [@jczaplew](https://github.com/jczaplew)) - creates `igrid.init()`
+* *rename* function to `igrid` to instead of camelCased `instagramGrid`
+
+**0.0.3** - 5/27/2014
 
 * *refactor* code to use `<img src>` tags instead of `<div>` with background images, which fixes Firefox and IE issues.
 * *update* built-in lightbox UI to use `<img>` tags and has a new 'close' button
