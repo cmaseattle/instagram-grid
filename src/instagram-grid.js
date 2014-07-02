@@ -1,8 +1,5 @@
 var igrid = (function() {
-  
-  // defaults
-
-  
+    
   function init(config) {
     // set up parameters object to pass
     // defaults are set here. If no default and the parameter is required an error should be thrown
@@ -11,6 +8,7 @@ var igrid = (function() {
         params = {
           '_container': config.container !== undefined ? config.container : error('container'),
           '_clientid': config.client_id !== undefined ? config.client_id : error('client_id'),
+          '_userID': config.userID !== undefined ? config.userID : error('userID'),
           '_width': w,
           '_height': h,
           '_total': w*h,
@@ -30,7 +28,7 @@ var igrid = (function() {
       type: "GET",
       dataType: "jsonp",
       cache: false,
-      url: 'https://api.instagram.com/v1/users/257720515/media/recent/?client_id='+p._clientid+'&count='+p.total,
+      url: 'https://api.instagram.com/v1/users/'+p._userID+'/media/recent/?client_id='+p._clientid+'&count='+p.total,
       success: function(d) {
         makeBlocks(d,p);
       },
