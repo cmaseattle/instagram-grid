@@ -30,6 +30,9 @@ igrid.init({
 **client_id**   
 `client_id` defines your client ID obtained from the instagram API. No authentication needed, just a quick API key. Follow [these steps](https://github.com/svmatthews/instagram-access-token-generation).
 
+**userID**
+`userID` defines the specific account from which you are getting the images from. This can be any public instagram account. To obtain the userID from an account, you can [enter the username on this website](http://jelled.com/instagram/lookup-user-id#) and get the key back. *Should be a string value, but an integer will work as well*.
+
 ## Optional Parameters
 
 **width**   
@@ -52,6 +55,19 @@ Default: `false`
 `likesHover` is used in hand with `likes` (above) to only show the like count when the user hovers over the image.   
 Default: `false`
 
+**clearfix**   
+`clearfix` option adds a standard [clearfix](http://nicolasgallagher.com/micro-clearfix-hack/) element to the end of your instagram blocks so your wrapping container element is expanded to the extent of your instagram images.   
+Default: `false`
+
+*Clearfix example*   
+Before - see the border of the wrapping element does not expand to extent of instagram photos because the insta blocks are outside of the document flow.
+
+![Instagram elements without a clearfix](img/clearfix-before.png)
+
+After - Clearfixes will fake out the filled extent and push your wrapping element down to the extent of your instagram elemnts.
+
+![Instagram elements with a clearfix enabled](img/clearfix-after.png)
+
 ## Example
 
 Initiate the instagram blocks to span 6 images across and 3 images down within the `#social` element. Clicking the element will show a larger, lightbox version of your image and each image will have the number of likes shown in the lower left corner.
@@ -59,13 +75,15 @@ Initiate the instagram blocks to span 6 images across and 3 images down within t
 ```JS
 $(document).ready(function(){
 	igrid.init({
-		container: 'social',
+		container: 'container',
 		client_id: 'your-client-id',
-		width: 6,
-		height: 3,
+		userID: '257720515', // CMA's instagram userID
+		width: 3,
+		height: 1,
 		link: true,
 		likes: true,
-		likesHover: true
+		likesHover: true,
+		clearfix: true
 	});
 });
 ```
