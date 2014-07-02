@@ -78,7 +78,7 @@ var igrid = (function() {
           if(p._likesHover) {
             like.className+=' hide';
           }
-          like.innerHTML='<img src="dist/img/insta-heart.svg" class="insta-heart">'+d.data[i].likes.count;
+          like.innerHTML='<img src="http://cmaseattle.github.io/instagram-grid/dist/img/insta-heart.svg" class="insta-heart">'+d.data[i].likes.count;
           block.appendChild(like);
         }
       }
