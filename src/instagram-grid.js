@@ -14,7 +14,8 @@ var igrid = (function() {
           '_total': w*h,
           '_link': config.link !== undefined ? config.link : false,
           '_likes': config.likes !== undefined ? config.likes : false,
-          '_likesHover': config.likesHover !== undefined ? config.likesHover : false
+          '_likesHover': config.likesHover !== undefined ? config.likesHover : false,
+          '_clearfix': config.clearfix !== undefined ? config.clearfix : false
         };
     getInsta(params);
   }
@@ -84,6 +85,11 @@ var igrid = (function() {
 
       block.appendChild(image);
       container.appendChild(block);
+    }
+    if(p._clearfix) {
+      var cf = document.createElement('div');
+      cf.className='cf';
+      container.appendChild(cf);
     }
   }
 
