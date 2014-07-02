@@ -85,7 +85,8 @@ body {
 	margin-right:5px;
 }
 .instagram-cover {
-	position:absolute;
+	position:fixed;
+	top:0;
 	width:100%;
 	height:100%;
 	background-color:rgba(0,0,0,.8);
