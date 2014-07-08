@@ -99,14 +99,22 @@ $(document).ready(function(){
 * more optional parameters
 	* ~~linkable options~~
 	* ~~linkable within current page (build lightbox)~~ or linkable to instagram website
-	* show like counts - boolean parameter - don't show if there aren't any likes for single photos *planned for 0.0.3*
+	* ~~show like counts - boolean parameter - don't show if there aren't any likes for single photos *planned for 0.0.3*~~
 * stack images vertically at specific media queries (optional)
 * ~~build testing/development environment~~
-* add example `gh-pages` branch with user input fields
+* ~~add example `gh-pages` branch with user input fields~~
 # ~~start recording history~~
 * ~~*build this as a real javascript library, rather than a file of accessible functions*~~
 
 ## History
+
+**0.0.5** - 7/8/2014
+
+* *new* parameter `caption` sets the caption of the image underneath the large version if `link` is set to `true`. Default is `true` so you would use `false` to turn it off.
+* *added* png image in place of svg image for safari svg bug - [issue #11](https://github.com/cmaseattle/instagram-grid/issues/11)
+* *removed* CSS3 transitions to prevent image aliasing and other artifacts in safari - [issue #12](https://github.com/cmaseattle/instagram-grid/issues/12)
+* *removed* relative path for svg image to now use CDN on gh-pages branch instead of including an `img/` directory.
+* *created* test directory with `index.html` - this should be expanded upon more I think.
 
 **0.0.4** - 5/29/2014
 
