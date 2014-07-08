@@ -16,17 +16,19 @@ body {
 }
 
 /* instagram grid styles */
-.insta-block,
-.insta-block-large {
-	-webkit-background-size: cover; 
-	-moz-background-size: cover; 
-	-o-background-size: cover; 
-	background-size: cover;
-	background-position:center center;
-}
 .insta-block {
 	float:left;
 	position:relative;
+}
+.insta-block-large {
+	position:absolute;
+	width:600px;
+	height:auto;
+	left:50%;
+	top:50%;
+	margin-top:-300px;
+	margin-left:-305px;
+	border:5px solid #fff;
 }
 .insta-img {
 	display:block;
@@ -34,15 +36,18 @@ body {
 	height:auto;
 	float:left;
 }
-.insta-block-large {
-	position:absolute;
-	width:600px;
-	height:600px;
-	left:50%;
-	top:50%;
-	margin-top:-300px;
-	margin-left:-300px;
-	border:5px solid #fff;
+.insta-img-large {
+	display:block;
+	width:100%;
+	height:auto;
+}
+.insta-img-caption {
+	display:block;
+	padding:5px 0 0;
+	background-color:#fff;
+	font-size:.8em;
+	font-family:arial, sans-serif;
+	color:#555;
 }
 .insta-img.clickable {
 	cursor:pointer;

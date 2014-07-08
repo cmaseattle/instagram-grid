@@ -47,6 +47,10 @@ Default: `2`
 `link` will add clickability to your images, allowing you to click and see a larger version of the image within your site - without linking to Instagram.   
 Default: `false`
 
+**caption**   
+`caption` is the written caption for the photo on instragram, including hashtags and other usernames. This shows up only underneath the large image if `link` is set to true.   
+Default: `true`
+
 **likes**   
 `likes` will add a small box in the corner of each image showing the number of likes **IF** the count is *at least one* like.   
 Default: `false`
