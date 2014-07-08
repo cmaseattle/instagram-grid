@@ -29,15 +29,10 @@ body {
 	position:relative;
 }
 .insta-img {
+	display:block;
 	width:100%;
 	height:auto;
 	float:left;
-	-webkit-transition: 0.2s;
-	-moz-transition: 0.2s;
-	-ms-transition: 0.2s;
-	-o-transition: 0.2s;
-	transition: 0.2s;
-	-webkit-backface-visibility: hidden;
 }
 .insta-block-large {
 	position:absolute;
@@ -69,12 +64,6 @@ body {
 }
 .insta-likes.hide {
 	opacity:0;
-	-webkit-transition: 0.2s;
-	-moz-transition: 0.2s;
-	-ms-transition: 0.2s;
-	-o-transition: 0.2s;
-	transition: 0.2s;
-	-webkit-backface-visibility: hidden;
 }
 .insta-block:hover .insta-likes.hide {
 	opacity:1;
