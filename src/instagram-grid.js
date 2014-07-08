@@ -15,6 +15,7 @@ var igrid = (function() {
           '_link': config.link !== undefined ? config.link : false,
           '_likes': config.likes !== undefined ? config.likes : false,
           '_likesHover': config.likesHover !== undefined ? config.likesHover : false,
+          '_caption': config.caption !== undefined ? config.caption : true,
           '_clearfix': config.clearfix !== undefined ? config.clearfix : false
         };
     getInsta(params);
@@ -43,31 +44,65 @@ var igrid = (function() {
     var container = document.getElementById(p._container);
     for(i=0;i<p._total;i++) {
 
+      // create image block
       var block = document.createElement('div');
       block.className='insta-block';
       block.style.width=100/p._width+'%';
 
+      // add image 
       var image = document.createElement('img');
       image.src=d.data[i].images.low_resolution.url;
       image.id='image-'+i;
       image.className='insta-img';
 
       if(p._link) {
+
+        // add class to image for css purposes
         image.className+=' clickable';
+
+        // add event listener for click, which executes all of the following ...
         image.addEventListener('click', function(){
+
+          // create full page image container
           var imageContain = document.createElement('div');
           imageContain.className = 'instagram-cover';
+
+          // remove image if container is clicked
           imageContain.addEventListener('click', function(){
             this.parentNode.removeChild(this);
           });
+
+          // create insta-block-large
+          var largeBlock = document.createElement('div');
+          largeBlock.className = 'insta-block-large';
+
+          // generate image
           var id = parseInt(this.id.slice(6), 10);
           var imageLarge = document.createElement('img');
-          imageLarge.className='insta-block-large';
+          imageLarge.className='insta-img-large';
           imageLarge.src=d.data[id].images.standard_resolution.url;
+
+          // add close button to cover container
           imageContain.innerHTML='<div class="insta-block-large-close">&times;</div>';
+
+          // append image to image container
+          largeBlock.appendChild(imageLarge);
+
+          // get image description
+          if(p._caption) {
+            var cap = d.data[id].caption.text;
+            var caption = document.createElement('div');
+            caption.className = 'insta-img-caption';
+            caption.innerHTML = cap;
+
+            // append to image container after image has already been added
+            largeBlock.appendChild(caption);
+          }
           
-          // append new elements to each other and to body
-          imageContain.appendChild(imageLarge);
+          // append image container to the full page container
+          imageContain.appendChild(largeBlock);
+
+          // append full container to the page
           document.body.appendChild(imageContain);
         });
       }
@@ -78,7 +113,7 @@ var igrid = (function() {
           if(p._likesHover) {
             like.className+=' hide';
           }
-          like.innerHTML='<img src="dist/img/insta-heart.svg" class="insta-heart">'+d.data[i].likes.count;
+          like.innerHTML='<img src="http://cmaseattle.github.io/instagram-grid/dist/img/insta-heart.png" class="insta-heart">'+d.data[i].likes.count;
           block.appendChild(like);
         }
       }

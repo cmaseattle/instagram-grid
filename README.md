@@ -1,7 +1,7 @@
 Instagram Responsive Grid
 =========================
 
-version **0.0.4**
+version **0.0.5**
 
 This library is intended for some quick-usage instagram feed work. Instagram-Grid allows you specify how many images wide and tall you want your feed to be within your specified container. **Requires jQuery** for `ajax` call. *NOTE*: maximum number of images in a single call is *33 images*.
 
@@ -46,6 +46,10 @@ Default: `2`
 **link**   
 `link` will add clickability to your images, allowing you to click and see a larger version of the image within your site - without linking to Instagram.   
 Default: `false`
+
+**caption**   
+`caption` is the written caption for the photo on instragram, including hashtags and other usernames. This shows up only underneath the large image if `link` is set to true.   
+Default: `true`
 
 **likes**   
 `likes` will add a small box in the corner of each image showing the number of likes **IF** the count is *at least one* like.   
@@ -95,14 +99,24 @@ $(document).ready(function(){
 * more optional parameters
 	* ~~linkable options~~
 	* ~~linkable within current page (build lightbox)~~ or linkable to instagram website
-	* show like counts - boolean parameter - don't show if there aren't any likes for single photos *planned for 0.0.3*
+	* ~~show like counts - boolean parameter - don't show if there aren't any likes for single photos *planned for 0.0.3*~~
 * stack images vertically at specific media queries (optional)
 * ~~build testing/development environment~~
-* add example `gh-pages` branch with user input fields
+* ~~add example `gh-pages` branch with user input fields~~
 # ~~start recording history~~
 * ~~*build this as a real javascript library, rather than a file of accessible functions*~~
 
 ## History
+
+**0.0.5** - 7/8/2014
+
+* *new* parameter `caption` sets the caption of the image underneath the large version if `link` is set to `true`. Default is `true` so you would use `false` to turn it off.
+* *refactored* large image blocks to be fixed instead of positioned absolutely, which removes the element completely from the document space even when there are `block` elements involved - [issue #10](https://github.com/cmaseattle/instagram-grid/issues/10)
+* *added* clearfix parameter to allow for images to expand document space since they are floating - [issue #5](https://github.com/cmaseattle/instagram-grid/issues/5)
+* *added* png image in place of svg image for safari svg bug - [issue #11](https://github.com/cmaseattle/instagram-grid/issues/11)
+* *removed* CSS3 transitions to prevent image aliasing and other artifacts in safari - [issue #12](https://github.com/cmaseattle/instagram-grid/issues/12)
+* *removed* relative path for svg image to now use CDN on gh-pages branch instead of including an `img/` directory.
+* *created* test directory with `index.html` - this should be expanded upon more I think.
 
 **0.0.4** - 5/29/2014
 
