@@ -111,6 +111,8 @@ $(document).ready(function(){
 **0.0.5** - 7/8/2014
 
 * *new* parameter `caption` sets the caption of the image underneath the large version if `link` is set to `true`. Default is `true` so you would use `false` to turn it off.
+* *refactored* large image blocks to be fixed instead of positioned absolutely, which removes the element completely from the document space even when there are `block` elements involved - [issue #10](https://github.com/cmaseattle/instagram-grid/issues/10)
+* *added* clearfix parameter to allow for images to expand document space since they are floating - [issue #5](https://github.com/cmaseattle/instagram-grid/issues/5)
 * *added* png image in place of svg image for safari svg bug - [issue #11](https://github.com/cmaseattle/instagram-grid/issues/11)
 * *removed* CSS3 transitions to prevent image aliasing and other artifacts in safari - [issue #12](https://github.com/cmaseattle/instagram-grid/issues/12)
 * *removed* relative path for svg image to now use CDN on gh-pages branch instead of including an `img/` directory.
