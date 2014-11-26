@@ -1,7 +1,7 @@
 Instagram Responsive Grid
 =========================
 
-version **0.0.5**
+version **0.0.6**
 
 This library is intended for some quick-usage instagram feed work. Instagram-Grid allows you specify how many images wide and tall you want your feed to be within your specified container. **Requires jQuery** for `ajax` call. *NOTE*: maximum number of images in a single call is *33 images*.
 
@@ -107,6 +107,10 @@ $(document).ready(function(){
 * ~~*build this as a real javascript library, rather than a file of accessible functions*~~
 
 ## History
+
+**0.0.6** - 11/26/2014
+
+* modularize the code, scoped parameters
 
 **0.0.5** - 7/8/2014
 
