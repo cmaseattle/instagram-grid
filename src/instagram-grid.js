@@ -117,7 +117,7 @@ var igrid = (function() {
         like = document.createElement('div');
         like.className='insta-likes';
         if(params._likesHover) {
-          like.className+=' hide';
+          like.className+=' hide-likes';
         }
         like.innerHTML='<img src="http://cmaseattle.github.io/instagram-grid/insta-heart.png" class="insta-heart">'+instagram.data[i].likes.count;
         block.appendChild(like);

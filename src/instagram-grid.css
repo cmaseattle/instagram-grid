@@ -77,10 +77,10 @@ body {
 	border-radius:3px;
 	z-index: 1;
 }
-.insta-likes.hide {
+.insta-likes.hide-likes {
 	opacity:0;
 }
-.insta-block:hover .insta-likes.hide {
+.insta-block:hover .insta-likes.hide-likes {
 	opacity:1;
 }
 .insta-heart {
