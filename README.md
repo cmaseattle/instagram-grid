@@ -1,7 +1,7 @@
 Instagram Responsive Grid
 =========================
 
-version **0.0.5**
+version **0.0.6**
 
 This library is intended for some quick-usage instagram feed work. Instagram-Grid allows you specify how many images wide and tall you want your feed to be within your specified container. **Requires jQuery** for `ajax` call. *NOTE*: maximum number of images in a single call is *33 images*.
 
@@ -59,6 +59,10 @@ Default: `false`
 `likesHover` is used in hand with `likes` (above) to only show the like count when the user hovers over the image.   
 Default: `false`
 
+*local*   
+`local` option allows you to define your local path to a version of your instagram data. This is typically scraped in a cron job or some other server-side process. See the PHP implementation below for an example of how to use this. Setting the path as a string will override the call to instagram even if you have your `client_id` and `userID` set.   
+Default: `false`
+
 **clearfix**   
 `clearfix` option adds a standard [clearfix](http://nicolasgallagher.com/micro-clearfix-hack/) element to the end of your instagram blocks so your wrapping container element is expanded to the extent of your instagram images.   
 Default: `false`
@@ -92,14 +96,28 @@ $(document).ready(function(){
 });
 ```
 
+## PHP (server) Implementation
+
+Implementing the instagram library locally is possible with the `local` parameter. You can set the path to the local version of your instagram data, assuming it is in a JSON format with the matching parameters from instagram. Setting `local` to any string will override the call to the instagram API. There is a PHP implementation in this repository that sets up a `config.php` file and a `get-instagram.php` file that essentially makes the same call to the API and generates an `instagram.json` file in a `instagram-data/` directory.
+
+This is particularly useful when setting up your scripts to run on a cron, so you aren't calling the Instagram API every time a new user loads the page. You'll need a server to run this properly, but we've set up the files to in the `php/` folder as an example. Fill out `config.php` with your information and run the script on your server. It will output into the `instagram-data/` folder.
+
+*NOTE: of course it'd be important to make sure your PHP scripts are running in a directory non publicly accessible, like any cron job. This will require you to set the path that the generated `instagram.json` file is sent to in `get-instagram.php` accordingly.*
+
+**Example Local Call*
+```JS
+igrid.init({
+  container: 'container',
+  local: '/instagram-data/instagram.json',
+  link: true,
+  clearfix: true
+});
+```
+
 ## Roadmap
 
 * remove jQuery reliance for ajax call
 * build error handler
-* more optional parameters
-	* ~~linkable options~~
-	* ~~linkable within current page (build lightbox)~~ or linkable to instagram website
-	* ~~show like counts - boolean parameter - don't show if there aren't any likes for single photos *planned for 0.0.3*~~
 * stack images vertically at specific media queries (optional)
 * ~~build testing/development environment~~
 * ~~add example `gh-pages` branch with user input fields~~
@@ -107,6 +125,15 @@ $(document).ready(function(){
 * ~~*build this as a real javascript library, rather than a file of accessible functions*~~
 
 ## History
+
+**0.0.6** - 11/26/2014
+
+* **added** new parameter `local` for local implementations of the code, assuming you have the instagram data already loaded in some other file. - [issue #21](https://github.com/cmaseattle/instagram-grid/issues/21)
+* **fixed** css conflict issue - [issue #18](https://github.com/cmaseattle/instagram-grid/issues/18)
+* **added** `@media` query for larger images [issue #16](https://github.com/cmaseattle/instagram-grid/issues/16)
+* **fixed** `caption==null` issue - [issue #17](https://github.com/cmaseattle/instagram-grid/issues/17)
+* started to modularize the code, scoped parameters, - [issue #20](https://github.com/cmaseattle/instagram-grid/issues/20) - *definitely not complete*
+* **fix** issue with clicking image and closing overlay - [issue #19](https://github.com/cmaseattle/instagram-grid/issues/19)
 
 **0.0.5** - 7/8/2014
 

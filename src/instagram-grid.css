@@ -22,7 +22,7 @@ body {
 }
 .insta-block-large {
 	position:absolute;
-	width:600px;
+	max-width:550px;
 	height:auto;
 	left:50%;
 	top:50%;
@@ -30,16 +30,26 @@ body {
 	margin-left:-305px;
 	border:5px solid #fff;
 }
-.insta-img {
-	display:block;
-	width:100%;
-	height:auto;
-	float:left;
+@media (max-width:550px) {
+	.insta-block-large {
+		position:relative;
+		display:block;
+		width:90%;
+		left:auto;
+		right:auto;
+		top:10px;
+		margin:auto;
+		border:1px solid #fff;
+	}
 }
+.insta-img,
 .insta-img-large {
 	display:block;
 	width:100%;
 	height:auto;
+}
+.insta-img {
+	float:left;
 }
 .insta-img-caption {
 	display:block;
@@ -67,10 +77,10 @@ body {
 	border-radius:3px;
 	z-index: 1;
 }
-.insta-likes.hide {
+.insta-likes.hide-likes {
 	opacity:0;
 }
-.insta-block:hover .insta-likes.hide {
+.insta-block:hover .insta-likes.hide-likes {
 	opacity:1;
 }
 .insta-heart {
