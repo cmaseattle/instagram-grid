@@ -104,7 +104,7 @@ This is particularly useful when setting up your scripts to run on a cron, so yo
 
 *NOTE: of course it'd be important to make sure your PHP scripts are running in a directory non publicly accessible, like any cron job. This will require you to set the path that the generated `instagram.json` file is sent to in `get-instagram.php` accordingly.*
 
-**Example Local Call*
+**Example Local Call**
 ```JS
 igrid.init({
   container: 'container',
