@@ -30,16 +30,14 @@ body {
 	margin-left:-305px;
 	border:5px solid #fff;
 }
-.insta-img {
-	display:block;
-	width:100%;
-	height:auto;
-	float:left;
-}
+.insta-img,
 .insta-img-large {
 	display:block;
 	width:100%;
 	height:auto;
+}
+.insta-img {
+	float:left;
 }
 .insta-img-caption {
 	display:block;
