@@ -163,7 +163,7 @@ var igrid = (function() {
     largeBlock.appendChild(imageLarge);
 
     // get image description
-    if(params._caption) {
+    if(params._caption && instagram.data[id].caption) {
       var cap = instagram.data[id].caption.text;
       var caption = document.createElement('div');
       caption.className = 'insta-img-caption';
