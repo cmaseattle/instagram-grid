@@ -128,8 +128,11 @@ igrid.init({
 
 **0.0.6** - 11/26/2014
 
-* **added** new parameter `local` for local implementations of the code, assuming you have the instagram data already loaded in some other file. [issue #21](https://github.com/cmaseattle/instagram-grid/issues/21)
-* started to modularize the code, scoped parameters, [issue #20](https://github.com/cmaseattle/instagram-grid/issues/20) - *definitely not complete*
+* **added** new parameter `local` for local implementations of the code, assuming you have the instagram data already loaded in some other file. - [issue #21](https://github.com/cmaseattle/instagram-grid/issues/21)
+* **fixed** css conflict issue - [issue #18](https://github.com/cmaseattle/instagram-grid/issues/18)
+* **added** `@media` query for larger images [issue #16](https://github.com/cmaseattle/instagram-grid/issues/16)
+* **fixed** `caption==null` issue - [issue #17](https://github.com/cmaseattle/instagram-grid/issues/17)
+* started to modularize the code, scoped parameters, - [issue #20](https://github.com/cmaseattle/instagram-grid/issues/20) - *definitely not complete*
 * **fix** issue with clicking image and closing overlay - [issue #19](https://github.com/cmaseattle/instagram-grid/issues/19)
 
 **0.0.5** - 7/8/2014
