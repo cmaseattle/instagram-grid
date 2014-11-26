@@ -22,8 +22,9 @@ var igrid = (function() {
     var h = config.height !== undefined ? config.height : 2;
     params = {
       '_container': config.container !== undefined ? config.container : error('container'),
-      '_clientid': config.client_id !== undefined ? config.client_id : error('client_id'),
-      '_userID': config.userID !== undefined ? config.userID : error('userID'),
+      '_local': config.local !== undefined ? config.local : false,
+      '_clientid': config.client_id !== undefined ? config.client_id : null,
+      '_userID': config.userID !== undefined ? config.userID : null,
       '_width': w,
       '_height': h,
       '_total': w*h,
@@ -47,11 +48,13 @@ var igrid = (function() {
   **
   */ 
   function getInsta() {
+    var url = params._local ? params._local : 'https://api.instagram.com/v1/users/'+params._userID+'/media/recent/?client_id='+params._clientid+'&count='+params.total;
+    var dataType = params._local ? "json" : "jsonp";
     $.ajax({
       type: "GET",
-      dataType: "jsonp",
+      dataType: dataType,
       cache: false,
-      url: 'https://api.instagram.com/v1/users/'+params._userID+'/media/recent/?client_id='+params._clientid+'&count='+params.total,
+      url: url,
       success: initGrid,
       error: function(xhr, ajaxOptions, thrownError) {
         console.log(xhr.status, thrownError);
@@ -141,7 +144,8 @@ var igrid = (function() {
 
     // remove image ONLY if container is clicked
     imageContain.addEventListener('click', function(){
-      if(event.target.className=='instagram-cover') {
+      console.log(event);
+      if(event.target.className=='instagram-cover' || event.target.className=="insta-block-large-close") {
         this.parentNode.removeChild(this);
       }
     });
