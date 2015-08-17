@@ -8,7 +8,7 @@ var igrid = (function() {
   var params; // user config
   var instagram; // instagram data
   var container; // instagram container
-  
+    
   /*
   **
   ** Initialize the igrid library
@@ -32,9 +32,44 @@ var igrid = (function() {
       '_likes': config.likes !== undefined ? config.likes : false,
       '_likesHover': config.likesHover !== undefined ? config.likesHover : false,
       '_caption': config.caption !== undefined ? config.caption : true,
-      '_clearfix': config.clearfix !== undefined ? config.clearfix : false
+      '_clearfix': config.clearfix !== undefined ? config.clearfix : false,
+      '_isMediaLarge': mq.matches
     };
     getInsta();
+  }
+      
+  /*
+  ** 
+  ** Handler to respond to media size
+  ** changes. Switches the image layout
+  ** between a vertical stack and a horizontal stack
+  **
+  */
+  function widthChange(mq){
+    $(".insta-block").each(function(){
+      this.style.width = getImageWidth(mq.matches);
+    });
+  }
+    
+  // media query to support a responsive image layout 
+  var mq = window.matchMedia( "(min-width: 640px)" );
+  mq.addListener(widthChange);
+  widthChange(mq);
+        
+    
+  /*
+  ** 
+  ** Return image size as a percentage of 
+  ** screen size
+  **
+  */
+  function getImageWidth(isLargeMedia){
+    if(isLargeMedia){
+      return 100/params._width + '%';
+    }
+    else {
+      return 100/2 + '%';
+    }
   }
 
   function alertMessage(message) {
@@ -71,7 +106,7 @@ var igrid = (function() {
   function initGrid(data) {
     instagram = data;
     container = document.getElementById(params._container);
-
+    
     for(var i=0;i<params._total;i++) {
       createImageBlock(i);
     }
@@ -92,8 +127,8 @@ var igrid = (function() {
 
     // create image block
     var block = document.createElement('div');
-    block.className='insta-block';
-    block.style.width=100/params._width+'%';
+    block.className='insta-block';      
+    block.style.width = getImageWidth(params._isMediaLarge);
 
     // add image 
     var image = document.createElement('img');
