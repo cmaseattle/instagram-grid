@@ -8,6 +8,7 @@ var igrid = (function() {
   var params; // user config
   var instagram; // instagram data
   var container; // instagram container
+  var mq; // media query
     
   /*
   **
@@ -20,6 +21,9 @@ var igrid = (function() {
     // defaults are set here. If no default and the parameter is required an error should be thrown
     var w = config.width !== undefined ? config.width : 5;
     var h = config.height !== undefined ? config.height : 2;
+    var mediaQuery = config.mediaQuery !== undefined ? config.mediaQuery : 640;
+    mq = window.matchMedia( "(min-width: " + mediaQuery +  "px)" );
+
     params = {
       '_container': config.container !== undefined ? config.container : error('container'),
       '_local': config.local !== undefined ? config.local : false,
@@ -38,7 +42,7 @@ var igrid = (function() {
     getInsta();
   }
       
-  /*
+  /*    
   ** 
   ** Handler to respond to media size
   ** changes. Switches the image layout
@@ -50,12 +54,7 @@ var igrid = (function() {
       this.style.width = getImageWidth(mq.matches);
     });
   }
-    
-  // media query to support a responsive image layout 
-  var mq = window.matchMedia( "(min-width: 640px)" );
-  mq.addListener(widthChange);
-  widthChange(mq);
-        
+            
     
   /*
   ** 
@@ -106,6 +105,10 @@ var igrid = (function() {
   function initGrid(data) {
     instagram = data;
     container = document.getElementById(params._container);
+      
+    // add listener
+    mq.addListener(widthChange);
+    widthChange(mq);
     
     for(var i=0;i<params._total;i++) {
       createImageBlock(i);
