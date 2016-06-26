@@ -27,8 +27,8 @@ igrid.init({
 **container**   
 `container` defines the element ID you wish to add your feed to. **Must** be an ID
 
-**client_id**   
-`client_id` defines your client ID obtained from the instagram API. No authentication needed, just a quick API key. Follow [these steps](https://github.com/svmatthews/instagram-access-token-generation).
+**access_token**
+`access_token` defines your access token obtained from the instagram API. Follow [these steps](https://www.instagram.com/developer/authentication/) to get an access token from Instagram
 
 **userID**
 `userID` defines the specific account from which you are getting the images from. This can be any public instagram account. To obtain the userID from an account, you can [enter the username on this website](http://jelled.com/instagram/lookup-user-id#) and get the key back. *Should be a string value, but an integer will work as well*.
@@ -84,7 +84,7 @@ Initiate the instagram blocks to span 6 images across and 3 images down within t
 $(document).ready(function(){
 	igrid.init({
 		container: 'container',
-		client_id: 'your-client-id',
+		access_token: 'your-access-token',
 		userID: '257720515', // CMA's instagram userID
 		width: 3,
 		height: 1,
